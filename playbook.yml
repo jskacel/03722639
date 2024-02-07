@@ -1,0 +1,13 @@
+- name: Gather facts
+  hosts: all
+  gather_facts: false
+
+  tasks:
+  - name: Gather server facts
+    become: true
+    ansible.builtin.setup:
+
+  - name: Gather the package facts
+    become: true
+    ansible.builtin.package_facts:
+      manager: auto
